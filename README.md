@@ -4,7 +4,7 @@ Welcome to my collection of web projects!
 You can explore them live below 👇
 
 ## 🔗 Live Demo
-👉 **[Click here to open all projects]([https://justakashk.github.io/projects/](https://justakashk.github.io/projects/myprojects.html))**
+👉 **[Click here to open all projects](https://justakashk.github.io/projects/myprojects.html)**
 
 ---
 
@@ -23,7 +23,7 @@ If you’d like to explore the source code, visit this repo:
 ## 🧑‍💻 Author
 **Akash Kumar**  
 💼 [LinkedIn Profile](https://www.linkedin.com/in/justakashk/)  
-🌐 [My Website](https://resuverse.com)
+🌐 [My Website](https://weekforweek.com)
 
 ---
 
