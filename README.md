@@ -4,7 +4,7 @@ Welcome to my collection of web projects!
 You can explore them live below 👇
 
 ## 🔗 Live Demo
-👉 **[Click here to open all projects](https://justakashk.github.io/projects/)**
+👉 **[Click here to open all projects]([https://justakashk.github.io/projects/](https://justakashk.github.io/projects/myprojects.html))**
 
 ---
 
