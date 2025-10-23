@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Projects — Coder Theme (Text Only)</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#071013;
+      --panel:#0b1620;
+      --muted:#6b7a86;
+      --accent:#6be56b;
+      --accent-2:#ffb86b;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --mono: 'Fira Code', 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Courier New', monospace;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--mono);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(88,101,116,0.02), transparent), var(--bg);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      line-height:1.5;
+    }
+
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,10,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      font-weight:600;
+      font-size:20px;
+    }
+
+    .subtitle{color:var(--muted); font-size:13px}
+
+    .controls{
+      display:flex;
+      gap:8px;
+      margin-left:auto;
+      align-items:center;
+    }
+    .search{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);
+      padding:10px 12px;
+      border-radius:8px;
+      font-family:var(--mono);
+      font-size:13px;
+      outline:none;
+      width:220px;
+    }
+    .small-btn{
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:8px;
+      font-family:var(--mono);
+      cursor:pointer;
+      font-size:13px;
+      transition:background .2s ease;
+    }
+    .small-btn:hover{background:rgba(255,255,255,0.05)}
+
+    .projects{display:flex;flex-direction:column;gap:12px}
+
+    .project{
+      padding:14px;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border:1px solid rgba(255,255,255,0.02);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .project:hover{transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,10,0.6)}
+
+    .proj-title{
+      color:var(--accent);
+      font-size:15px;
+      font-weight:600;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .proj-title::before{content:"<"; color:var(--accent-2)}
+    .proj-title::after{content:">"; color:var(--accent-2)}
+
+    .meta{font-size:12px; color:var(--muted); margin-top:6px}
+
+    .tags{margin-top:8px; display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.02); color:var(--muted); border:1px solid rgba(255,255,255,0.02)}
+    .tag.code{color:var(--accent-2); border-color:rgba(255,184,107,0.09)}
+    .tag.lang{color:var(--accent); border-color:rgba(107,229,107,0.06)}
+
+    .snippet{
+      margin-top:10px;
+      background:rgba(0,0,0,0.03);
+      padding:12px;
+      border-radius:8px;
+      font-size:13px;
+      color:#cfe8cf;
+      white-space:pre-wrap;
+    }
+
+    .buttons{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+    }
+    .link-btn{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,0.05);
+      color:var(--accent);
+      padding:8px 12px;
+      border-radius:8px;
+      font-family:var(--mono);
+      font-size:13px;
+      text-decoration:none;
+      transition:background .2s ease, color .2s ease;
+    }
+    .link-btn:hover{
+      background:rgba(255,255,255,0.07);
+      color:var(--accent-2);
+    }
+
+    footer{margin-top:18px; color:var(--muted); font-size:13px}
+
+    @media (max-width:640px){
+      .search{width:140px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="brand">akash-kumar.js</div>
+        <div class="subtitle">html | css | js | python | C | react etc</div>
+      </div>
+      <div class="controls">
+        <input id="q" class="search" placeholder="search projects, tags, lang..." />
+        <button id="reset" class="small-btn">Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="projects" id="projects">
+
+        <article class="project" data-search="resume builder html css js webapp">
+          <div class="proj-title">Resume Builder — Web App</div>
+          <div class="meta">Built: Aug 2025 · Role: Solo · Status: Live</div>
+          <div class="tags">
+            <div class="tag lang">HTML</div>
+            <div class="tag lang">CSS</div>
+            <div class="tag lang">JavaScript</div>
+            <div class="tag code">WebApp</div>
+          </div>
+          <div class="snippet">// Features
+- Real-time preview
+- Export to PDF
+- Multiple templates selectable via UI</div>
+          <div class="buttons">
+            <a href="https://weekforweek.com/resume-builder" target="_blank" class="link-btn">🔗 Live View</a>
+            <a href="https://github.com/justakashk/resume-builder" target="_blank" class="link-btn">💻 GitHub</a>
+          </div>
+        </article>
+
+        
+
+        
+
+      </section>
+    </main>
+
+    <footer>
+      Tip: View Code and Live Projects By Clicking On Live View and Github Code Buttons.
+    </footer>
+  </div>
+
+  <script>
+    const q = document.getElementById('q');
+    const projects = Array.from(document.querySelectorAll('.project'));
+    const reset = document.getElementById('reset');
+
+    function filter(){
+      const v = q.value.trim().toLowerCase();
+      projects.forEach(p=>{
+        const dataset = (p.getAttribute('data-search')||'') + ' ' + p.innerText;
+        p.style.display = dataset.toLowerCase().includes(v) ? 'block' : 'none';
+      })
+    }
+
+    q.addEventListener('input', filter);
+    reset.addEventListener('click', ()=>{ q.value=''; filter(); q.focus(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === '/' && document.activeElement !== q){ e.preventDefault(); q.focus(); } });
+  </script>
+</body>
+</html>
